@@ -176,8 +176,8 @@ h2 { font-size: clamp(35px, 4vw, 49px); font-weight: 500; line-height: 1.17; let
 @media (max-width: 760px) {
   .page-wrap { width: min(100% - 40px, 560px); }
   .site-header { height: 66px; padding-inline: 20px; }
-  .main-nav { gap: 16px; font-size: 10px; }
-  .main-nav a:first-child { display: none; }
+  .main-nav { gap: 12px; font-size: 10px; }
+  .main-nav a { display: flex; min-height: 44px; align-items: center; }
   .main-nav .nav-contact { padding: 9px 10px; }
   .hero { min-height: initial; grid-template-columns: 1fr; gap: 12px; padding-top: 52px; padding-bottom: 63px; }
   .hero-copy { padding: 0; }
@@ -196,6 +196,7 @@ h2 { font-size: clamp(35px, 4vw, 49px); font-weight: 500; line-height: 1.17; let
   .step-heading { gap: 14px; padding: 28px 0 30px; }
   .brief-grid { grid-template-columns: 1fr; }
   .brief-main { grid-row: auto; min-height: 330px; }
+  .brief-tags { position: static; margin-top: 22px; }
   .brief-card { min-height: 190px; }
   .map-branches { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding-top: 20px; }
   .map-branches::before, .map-root::after, .map-branch::before { display: none; }
@@ -207,7 +208,8 @@ h2 { font-size: clamp(35px, 4vw, 49px); font-weight: 500; line-height: 1.17; let
   .map-leaves { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 6px; padding: 6px; }
   .map-leaves span { padding: 8px 3px; font-size: 8px; }
   .sitemap-board { padding: 26px 13px 20px; }
-  .wireframes { grid-template-columns: repeat(5, minmax(180px, 1fr)); overflow-x: auto; padding-bottom: 8px; }
+  .wireframes { grid-template-columns: repeat(5, minmax(180px, 1fr)); overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+  .wire-card { scroll-snap-align: start; }
   .live-site-link { min-height: 260px; grid-template-columns: 1.1fr .9fr; }
   .live-site-art { min-height: 260px; }
   .live-site-domain { font-size: 6px; }
@@ -215,8 +217,9 @@ h2 { font-size: clamp(35px, 4vw, 49px); font-weight: 500; line-height: 1.17; let
 }
 
 @media (max-width: 430px) {
-  .main-nav { gap: 11px; font-size: 9px; }
-  .wordmark { font-size: 22px; }
+  .site-header { padding-inline: 14px; }
+  .main-nav { gap: 9px; font-size: 9px; }
+  .wordmark { font-size: 20px; }
   .hero-art { height: 320px; }
   .strip-inner strong { font-size: 10px; }
   .map-branches { gap: 8px; }
@@ -338,4 +341,14 @@ body { background: var(--paper); color: var(--ink); }
   .other-projects-index { align-self: flex-end; }
   .website-card { grid-template-columns: 1fr; }
   .website-preview { aspect-ratio: 1.5; min-height: 0; }
-  }
+}
+
+@media (max-width: 360px) {
+  .page-wrap { width: calc(100% - 32px); }
+  .site-header { padding-inline: 12px; }
+  .wordmark { font-size: 18px; letter-spacing: -1px; }
+  .main-nav { gap: 7px; font-size: 8px; }
+  h1 { font-size: clamp(42px, 12vw, 50px); }
+  .hero-art { height: 270px; }
+  .strip-inner { gap: 16px 10px; }
+}
